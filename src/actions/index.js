@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+import { Actions } from 'react-native-router-flux';
 import * as types from './types';
 
 export const emailChanged = (text) => {
@@ -39,6 +40,9 @@ const dispatchLoginUserSuccess = (dispatch, user) => {
         type: types.LOGIN_USER_SUCCESS,
         payload: user
     });
+
+    //navigate to EmployeeList scene
+    Actions.main(); //method was generated from scene key
 };
 
 const dispatchLoginUserFail = (dispatch) => {
